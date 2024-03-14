@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  espress_pdf:
+    container_name: express-pdf
+    image: express-pdf:1.0.0
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/src/
+    command: npm run start
+    restart: unless-stopped
