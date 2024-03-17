@@ -8,8 +8,13 @@ services:
       context: .
       dockerfile: ./dockerfile
     ports:
-      - 3000:3000
+      - 3330:3330
     volumes:
       - .:/src/
+      - node_modules:/src/node_modules 
     command: npm run start
     restart: unless-stopped
+
+volumes:
+  node_modules:
+    name: espress_pdf-node_modules
